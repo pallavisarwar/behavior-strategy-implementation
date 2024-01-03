@@ -22,7 +22,11 @@ Clone the [practice-code-review](https://github.com/hackyourfuturebelgium/practi
 
 ### Before Break
 
-What is code review? Why is it important?
+Practice some [function design exercises](../2-write/1-function-design/exercises/)
+
+- **All Together**: What is function design? What are the steps? Why is this important?
+- **In small groups**: Write some functions!
+    What is code review? Why is it important?
 
 - **All together**: Discuss code review, your coach's personal experience, and the [code review checklist](https://github.com/hackyourfuturebelgium/practice-code-review/tree/master/.github/pull_request_template.md). (PS. GitHub has great tools for reviewing code in a Pull Request)
 - **In small groups**: Chose a few solutions your classmates wrote while studying last week and try to review them according to the checklist.

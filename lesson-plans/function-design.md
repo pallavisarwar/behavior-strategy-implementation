@@ -10,14 +10,12 @@ Learn to write unit tests and to design your own solutions to coding challenges.
 
 ## During Class
 
-### Before Break
+### After Break
 
 Practice writing unit tests for functions.
 
 - **All together**: Introduce the syntax for unit testing, and go through the example [repeat-a-string](../2-write/1-function-design/examples/repeat-a-string).
 - **In small groups**: Write some tests!
-
-### After Break
 
 Practice some [function design exercises](../2-write/1-function-design/exercises/)
 
