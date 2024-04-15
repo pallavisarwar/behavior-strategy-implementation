@@ -11,6 +11,17 @@
  */
 
 // -------- your solutions --------
+ function sumNumberyStrings(arr) {
+  let sum = 0;
+  for (const str of arr) {
+    const num = Number(str);
+    if (!isNaN(num)) {
+      sum += num;
+    }
+  }
+  return sum;
+}
+  
 
 const mapFilterReduce = (arr) => {
   // these work, you need to pass them to the right array methods
@@ -19,7 +30,10 @@ const mapFilterReduce = (arr) => {
   const castToNumber = (entry) => Number(entry);
 
   // fill in the array methods and pass in the correct logic
-  const sumOfNumberies = arr._(_)._(_)._(_, _);
+  const sumOfNumberies = arr
+    .map(castToNumber) // convert each string to a number
+    .filter(isNotNaN)  // filter out non-numeric values
+    .reduce(sumNumbers, 0); //sum the remaining values, starting from 0
 
   return sumOfNumberies;
 };
@@ -30,9 +44,22 @@ for (const solution of [
   secretSolution,
   // mapFilterReduce,
 ]) {
-  describe(solution.name + ': _', () => {
-    describe('_', () => {
-      it('_', () => {});
+  describe(solution.name + ': sumNumberyStrings', () => {
+    describe('checking different test cases', () => {
+      it('returns 0 for an empty array', () => {
+       const result = sumNumberyStrings([]);
+            expect(result).toBe(0); 
+      });
+      it('returns 0 if there is no numbery strings', () => {
+       const arr = ['a', 'b', 'c']
+       const result = sumNumberyStrings(arr);
+            expect(result).toBe(0); 
+      });
+      it('returns sum of the numbery strings', () => {
+       const arr = [ 56, 'a', 8, 'b', 98, 5, 'c']
+       const result = sumNumberyStrings(arr);
+            expect(result).toBe(56 + 8 + 98 + 5); 
+      });
     });
   });
 }
