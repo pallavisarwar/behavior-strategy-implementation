@@ -12,6 +12,18 @@
  */
 
 // -------- your solutions --------
+function casifyText(text = '', lowerCase = true) {
+  if (typeof text !== 'string') {
+    throw new TypeError('The text parameter must be a string.');
+  }
+
+  if (lowerCase) {
+    return text.toLowerCase();
+  } else {
+    return text.toUpperCase();
+  }
+}
+
 
 for (const solution of [secretSolution]) {
   describe(solution.name + ': sets a text to lower or upper case', () => {
@@ -26,22 +38,55 @@ for (const solution of [secretSolution]) {
     // write the tests indicated by the comments
     describe('when set to lower case', () => {
       // when the text is an empty string
-      it(_, () => {
-        expect(solution(_, _)).toEqual(_);
+      it('for empty string', () => {
+        expect(solution('',true)).toEqual('');
       });
       // when the text is all upper case
+      it('for the text is all upper case', () => {
+        expect(solution('HELLO',true)).toEqual('hello');
+      });
       // when the text is all lower case
+      it('for the text is all lower case', () => {
+        expect(solution('hello',true)).toEqual('hello');
+      });
       // when the text is mixed upper and lower case
+      it('for the text is mixed case', () => {
+        expect(solution('HelloWorld',true)).toEqual('helloworld');
+      });
       // when the text contains punctuation
+      it('for the text containing punctuation', () => {
+        expect(solution('Hello, World!',true)).toEqual('hello, world!');
+      });
       // when the text contains numbers
+      it('for the text containing numbers', () => {
+        expect(solution('Pallavi123',true)).toEqual('pallavi123');
+      });
     });
     describe('when set to upper case', () => {
       // when the text is an empty string
+      it('for empty string', () => {
+        expect(solution('',false)).toEqual('');
+      });
       // when the text is all upper case
+      it('for the text is all upper case', () => {
+        expect(solution('HELLO',false)).toEqual('HELLO');
+      });
       // when the text is all lower case
+      it('for the text is all lower case', () => {
+        expect(solution('hello',false)).toEqual('HELLO');
+      });
       // when the text is mixed upper and lower case
+      it('for the text is mixed case', () => {
+        expect(solution('HelloWorld',false)).toEqual('HELLOWORLD');
+      });
       // when the text contains punctuation
+      it('for the text containig punctuation', () => {
+        expect(solution('Hello, World!',false)).toEqual('HELLO, WORLD!');
+      });
       // when the text contains numbers
+      it('for the text containing numbers', () => {
+        expect(solution('Pallavi123',false)).toEqual('PALLAVI123');
+      });
     });
   });
 }
