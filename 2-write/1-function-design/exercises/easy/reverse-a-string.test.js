@@ -9,6 +9,9 @@
  */
 
 // -------- your solutions --------
+const reverseString = (str) => {
+  return str.split('').reverse().join('');
+};
 
 for (const solution of [secretSolution]) {
   // the main test suite for the function
@@ -23,6 +26,15 @@ for (const solution of [secretSolution]) {
       expect(solution('ASDF')).toEqual('FDSA');
     });
     // write at least 5 more tests ...
+    it('a string is a number', () => {
+      expect(solution('123')).toEqual('321');
+    });
+    it('a string is a number', () => {
+      expect(solution('!@#$%')).toEqual('%$#@!');
+    });
+    it('is a string ', () => {
+      expect(solution('hello world')).toEqual('dlrow olleh');
+    });
   });
 }
 
