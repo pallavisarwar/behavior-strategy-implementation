@@ -10,13 +10,34 @@
  */
 
 // -------- your solutions --------
+function removeOddNumbers(arrayOfNumbers) {
+  // Filter out odd numbers from the array
+  const evenNumbers = arrayOfNumbers.filter(number => number % 2 === 0);
+  
+  // Return the new array with only even numbers
+  return evenNumbers;
+}
 
 for (const solution of [secretSolution]) {
-  describe(solution.name + ': _', () => {
-    describe('_', () => {
-      it('_', () => {});
+  describe(solution.name + ': only even numbers', () => {
+    describe('when there are only odd numbers in the array', () => {
+      it('should return an empty array', () => {
+        const input = [1, 3, 5, 7];
+        const result = solution(input);
+        expect(result).toEqual([]);
+      });
+      it('when there are only even numbers in the array should return same array', () => {
+        const input = [2, 4, 6, 8];
+        const result = solution(input);
+        expect(result).toEqual([2, 4, 6, 8]);
+      });
+      it('when both even and odd numbers in the array should return an array with only even numbers', () => {
+      const input = [1, 2, 3, 4, 5, 6];
+      const result = solution(input);
+      expect(result).toEqual([2, 4, 6]);
     });
   });
+});
 }
 
 // minified solution for testing your tests
