@@ -10,25 +10,17 @@
  */
 
 // -------- your solutions --------
-const countUp1 = (num = 0) => {
-    const arr = [];
-    for (let i = 0; i <= num; i++) {
-        arr.push(i);
-    }
+function countUp(max = 0) {
+  if (max <= 0 || !Number.isInteger(max)) {
+    throw new TypeError('Max must be a positive integer.');
+  }
 
-    return arr;
-};
-
-const countUp2 = (num = 0) => {
-    const arr = [];
-    let i = 0;
-    while (i <= num) {
-        arr.push(i);
-        num--;
-    }
-    return arr;
-};
-
+  const result = [];
+  for (let i = 0; i <= max; i++) {
+    result.push(i);
+  }
+  return result;
+}
 
 for (const solution of [secretSolution]) {
   // the main test suite for the function

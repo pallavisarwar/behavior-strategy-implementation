@@ -10,11 +10,7 @@
  */
 
 // -------- your solutions --------
-function countdown(start = 0) {
-  if (!Number.isInteger(start) || start <= 0) {
-    throw new Error('Start must be an integer greater than 0.');
-  }
-
+function countDown(start = 0) {
   const result = [];
   for (let i = start; i >= 0; i--) {
     result.push(i);
